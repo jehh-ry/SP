@@ -53,7 +53,7 @@ public class UrlServlet extends HttpServlet {
         
         // Sinon, affiche la page HTML normale (serveur A seulement)
         if (!isRequestFromServerA(req)) {
-            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Acces reserve au serveur A");
+            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Acces reserve");
             return;
         }
         
@@ -90,9 +90,9 @@ public class UrlServlet extends HttpServlet {
         
         List<String> urls = UrlStorage.getUrls();
         if (urls.isEmpty()) {
-            out.println("<p>Aucune URL stockee pour le moment</p>");
+            out.println("<p>Aucune URL pour le moment</p>");
         } else {
-            out.println("<h3>URLs stockees (" + urls.size() + ")</h3>");
+            out.println("<h3>URLs disponibles (" + urls.size() + ")</h3>");
             out.println("<ul>");
             for (String url : urls) {
                 out.println("<li><a href='" + url + "' target='_blank'>" + url + "</a></li>");
@@ -119,7 +119,7 @@ public class UrlServlet extends HttpServlet {
         
         // Vérifie que la requête vient du serveur A
         if (!isRequestFromServerA(req)) {
-            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Accès refusé : réservé au serveur A");
+            resp.sendError(HttpServletResponse.SC_FORBIDDEN, "Acces refuse");
             return;
         }
 
