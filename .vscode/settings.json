@@ -1,0 +1,10 @@
+{
+    "java.project.referencedLibraries": [
+        "TestProject/lib/jakarta.servlet-api-6.0.0.jar",
+        "Framework/build/framework.jar"
+    ],
+    "java.project.sourcePaths": [
+        "TestProject/src",
+        "Framework/src"
+    ]
+}
