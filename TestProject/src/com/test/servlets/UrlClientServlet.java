@@ -30,7 +30,7 @@ public class UrlClientServlet extends HttpServlet {
         out.println("</head>");
         out.println("<body>");
         
-        out.println("<h2>Client - URLs du Serveur A</h2>");
+        out.println("<h2>Client - URLs disponibles</h2>");
         
         try {
             String jsonResult = UrlFetcher.fetch(SERVER_A_API);
